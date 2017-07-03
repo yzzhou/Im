@@ -24,12 +24,12 @@ public class UiUtils {
             MyApplication.getHandler().post(runnable);
         }
     }
-    public static void showToast(String message){
+    public static void showToast(final String message){
         UIThread(new Runnable(){
 
             @Override
             public void run() {
-                Toast.makeText(getContext(), "message", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), message, Toast.LENGTH_SHORT).show();
             }
         });
     }

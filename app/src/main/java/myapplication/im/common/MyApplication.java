@@ -30,6 +30,9 @@ public class MyApplication extends Application {
 
         //初始化modle
         Modle.getInstance().init(this);
+        handler = new Handler();
+        pid = android.os.Process.myPid();
+        context = this;
     }
 
     public static Context getContext() {

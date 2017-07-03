@@ -14,6 +14,7 @@ import myapplication.im.modle.dao.AccountDAO;
 
 public class Modle {
     private AccountDAO accountDAO;
+    private GlobalListener globalListener;
 
     private Modle(){}
 
@@ -28,6 +29,7 @@ public class Modle {
     public void init(Context context){
         this.context = context;
         accountDAO = new AccountDAO(context);
+        globalListener = new GlobalListener(context);
     }
 
     private ExecutorService service = Executors.newCachedThreadPool();
